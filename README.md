@@ -10,7 +10,7 @@
 [![Instruction only](https://img.shields.io/badge/package-instructions%20only-168a71)](#security-and-privacy)
 [English](README.md) · [فارسی](README.fa.md)
 
-> **Release candidate:** prepared for `siavash00memar/terminator-reasoning-skill`. This repository has not been created yet. The included `LICENSE` is MIT.
+> **Public release:** `siavash00memar/terminator-reasoning-skill`. Licensed under MIT.
 
 ---
 

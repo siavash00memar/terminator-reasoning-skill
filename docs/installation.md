@@ -1,6 +1,6 @@
 # Installation guide
 
-The commands below install the public repository at `https://github.com/siavash00memar/terminator-reasoning-skill`. If the URL is not live yet, wait until the initial repository publication is complete.
+The commands below install the public repository at `https://github.com/siavash00memar/terminator-reasoning-skill`.
 
 Terminator follows the open Agent Skills folder format. Client support for that format does not mean every feature, trigger, approval flow, or command behaves the same in every product. Use the platform-specific path below and consult its current docs when a client changes.
 

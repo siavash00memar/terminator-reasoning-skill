@@ -10,7 +10,7 @@
 [![فقط دستورالعمل](https://img.shields.io/badge/package-instructions%20only-168a71)](#امنیت-و-حریم-خصوصی)
 [English](README.md) · [فارسی](README.fa.md)
 
-> **نسخهٔ آمادهٔ انتشار:** برای مخزن `siavash00memar/terminator-reasoning-skill` آماده شده است؛ مخزن هنوز ساخته نشده. فایل `LICENSE` با مجوز MIT در بسته قرار دارد.
+> **انتشار عمومی:** `siavash00memar/terminator-reasoning-skill` با مجوز MIT.
 
 ---
 
