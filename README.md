@@ -83,9 +83,23 @@ This example describes the intended workflow, not a measured outcome. The skill 
 
 The skill is a small folder: `SKILL.md` plus task-specific reference guides. It has no runtime dependencies or bundled executable scripts.
 
-### Codex, Cursor, or another client that discovers `~/.agents/skills`
+### Method 1: install with `npx skills` (recommended)
 
-After publication, clone it directly to the user-level skills folder:
+The Skills CLI installs this GitHub repository into Codex's global skill directory. It requires Node.js 22.20 or later:
+
+```sh
+npx skills add siavash00memar/terminator-reasoning-skill --skill terminator --global --agent codex
+```
+
+To target another supported agent, replace `codex` with its Skills CLI name, such as `claude-code` or `cursor`. To update a global installation made with this CLI:
+
+```sh
+npx skills update terminator --global
+```
+
+See the [Skills CLI reference](https://github.com/vercel-labs/skills/blob/main/docs/commands.md) for current agent names and options. If Codex does not discover the skill, restart it; then invoke it with `$terminator` or ask a relevant task naturally.
+
+### Method 2: install manually from Git
 
 ```bash
 git clone https://github.com/siavash00memar/terminator-reasoning-skill.git \
@@ -99,16 +113,7 @@ git clone https://github.com/siavash00memar/terminator-reasoning-skill.git `
   "$HOME\.agents\skills\terminator"
 ```
 
-For project-only use, clone into `<project>/.agents/skills/terminator` instead. Codex and Cursor officially support this shared directory. If Codex does not discover the skill, restart it; then invoke it with `$terminator` or ask a relevant task naturally.
-
-### Claude Code
-
-```bash
-git clone https://github.com/siavash00memar/terminator-reasoning-skill.git \
-  "$HOME/.claude/skills/terminator"
-```
-
-For project-only use, clone to `<project>/.claude/skills/terminator`. Claude Code can use `/terminator` or activate a matching skill automatically.
+For project-only use, clone into `<project>/.agents/skills/terminator`. Codex and Cursor discover this shared directory. Claude Code's documented paths are `~/.claude/skills/terminator` globally and `<project>/.claude/skills/terminator` per project. To update a manual clone, run `git -C <skill-folder> pull`.
 
 ### Gemini CLI
 
@@ -120,7 +125,7 @@ Use `--scope workspace` for a project-level install. In a Gemini CLI session, ru
 
 ### Update or remove
 
-The direct-clone methods above install a normal Git checkout. Update it with `git -C <skill-folder> pull`. To remove it, delete only the installed `terminator` skill folder. Gemini CLI users can use `gemini skills uninstall terminator --scope user` (or `workspace` for a project install).
+To update a global installation made with Skills CLI, run `npx skills update terminator --global`. Update a manual Git clone with `git -C <skill-folder> pull`. To remove it, delete only the installed `terminator` skill folder. Gemini CLI users can use `gemini skills uninstall terminator --scope user` (or `workspace` for a project install).
 
 More platform notes and the OpenAI API path are in [Installation](docs/installation.md).
 
@@ -149,10 +154,11 @@ Useful reports include the task prompt, relevant context, the expected behavior,
 
 ## Sources and compatibility
 
-The installation guide was checked against official documentation on **25 October 2026**. Client paths and commands can change; recheck the linked documentation before relying on a command in a new release.
+The installation guide was checked against official documentation on **26 October 2026**. Client paths and commands can change; recheck the linked documentation before relying on a command in a new release.
 
 - [Agent Skills specification](https://agentskills.io/specification)
 - [Codex: build skills](https://learn.chatgpt.com/docs/build-skills)
+- [Skills CLI installation and update commands](https://github.com/vercel-labs/skills/blob/main/docs/commands.md)
 - [Claude: Agent Skills overview](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
 - [Gemini CLI: Agent Skills](https://geminicli.com/docs/cli/skills/)
 - [Cursor: Agent Skills](https://cursor.com/docs/skills)

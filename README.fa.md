@@ -83,9 +83,23 @@ flowchart LR
 
 این اسکیل شامل `SKILL.md`، نقشهٔ فعال‌سازی کامل، شیوه‌نامهٔ اجرایی ۲۸ تگ و راهنماهای تکمیلی متناسب با نوع کار است. وابستگی اجرایی یا اسکریپت قابل‌اجرا ندارد.
 
-### Codex، Cursor و ابزارهایی که `~/.agents/skills` را می‌شناسند
+### روش اول: نصب سریع با `npx skills` (پیشنهادی)
 
-بعد از انتشار، آن را در پوشهٔ اسکیل‌های کاربر کلون کن:
+ابزار Skills CLI مخزن گیت‌هاب را در مسیر سراسری اسکیل‌های Codex نصب می‌کند. این روش به Node.js نسخهٔ ۲۲٫۲۰ یا بالاتر نیاز دارد:
+
+```sh
+npx skills add siavash00memar/terminator-reasoning-skill --skill terminator --global --agent codex
+```
+
+برای نصب در ایجنت دیگر، `codex` را با نام همان ایجنت در Skills CLI عوض کن؛ مثلاً `claude-code` یا `cursor`. برای به‌روزرسانی نسخهٔ سراسری‌ای که با این ابزار نصب شده:
+
+```sh
+npx skills update terminator --global
+```
+
+برای نام و گزینه‌های به‌روز ایجنت‌ها، [راهنمای رسمی Skills CLI](https://github.com/vercel-labs/skills/blob/main/docs/commands.md) را ببین. اگر Codex اسکیل را نشناخت، آن را دوباره اجرا کن و بعد `$terminator` را بنویس یا درخواست مرتبطی بده.
+
+### روش دوم: نصب دستی از گیت
 
 ```bash
 git clone https://github.com/siavash00memar/terminator-reasoning-skill.git \
@@ -99,16 +113,7 @@ git clone https://github.com/siavash00memar/terminator-reasoning-skill.git `
   "$HOME\.agents\skills\terminator"
 ```
 
-برای استفادهٔ فقط در یک پروژه، آن را در `<project>/.agents/skills/terminator` کلون کن. Codex و Cursor رسماً از این مسیر مشترک پشتیبانی می‌کنند. اگر Codex اسکیل را نشناخت، آن را دوباره اجرا کن و بعد `$terminator` را بنویس یا درخواست مرتبطی بده.
-
-### Claude Code
-
-```bash
-git clone https://github.com/siavash00memar/terminator-reasoning-skill.git \
-  "$HOME/.claude/skills/terminator"
-```
-
-برای استفادهٔ فقط در یک پروژه، مسیر `<project>/.claude/skills/terminator` را به‌کار ببر. می‌توانی `/terminator` را اجرا کنی یا یک درخواست مرتبط بنویسی تا خودکار فعال شود.
+برای استفادهٔ فقط در یک پروژه، آن را در `<project>/.agents/skills/terminator` کلون کن؛ Codex و Cursor این مسیر مشترک را می‌شناسند. مسیر سراسری Claude Code برابر `~/.claude/skills/terminator` و مسیر پروژه‌ای آن `<project>/.claude/skills/terminator` است. برای به‌روزرسانی clone دستی، `git -C <skill-folder> pull` را اجرا کن.
 
 ### Gemini CLI
 
@@ -120,7 +125,7 @@ gemini skills install https://github.com/siavash00memar/terminator-reasoning-ski
 
 ### به‌روزرسانی یا حذف
 
-روش‌های کلون مستقیم بالا یک کپی Git معمولی نصب می‌کنند. با `git -C <skill-folder> pull` به‌روزرسانی‌اش کن. برای حذف، فقط پوشهٔ نصب‌شدهٔ `terminator` را پاک کن. در Gemini CLI می‌توان از `gemini skills uninstall terminator --scope user` استفاده کرد؛ برای نصب پروژه‌ای، `workspace` را جایگزین کن.
+برای به‌روزرسانی نصب Skills CLI از `npx skills update terminator --global` استفاده کن؛ این دستور فقط نصب‌هایی را مدیریت می‌کند که با همان CLI انجام شده‌اند. clone دستی را با `git -C <skill-folder> pull` به‌روز کن. برای حذف، فقط پوشهٔ نصب‌شدهٔ `terminator` را پاک کن. در Gemini CLI می‌توان از `gemini skills uninstall terminator --scope user` استفاده کرد؛ برای نصب پروژه‌ای، `workspace` را جایگزین کن.
 
 جزئیات هر پلتفرم و مسیر OpenAI API در [راهنمای نصب](docs/installation.md) آمده است.
 
@@ -149,9 +154,10 @@ gemini skills install https://github.com/siavash00memar/terminator-reasoning-ski
 
 ## منابع و سازگاری
 
-راهنمای نصب در **۲۵ اکتبر ۲۰۲۶** با مستندات رسمی بررسی شده است. مسیرها و دستورهای نصب ممکن است تغییر کنند؛ پیش از اتکا به آن‌ها در نسخه‌ای جدید، مستندات لینک‌شده را دوباره بررسی کن.
+راهنمای نصب در **۲۶ اکتبر ۲۰۲۶** با مستندات رسمی بررسی شده است. مسیرها و دستورهای نصب ممکن است تغییر کنند؛ پیش از اتکا به آن‌ها در نسخه‌ای جدید، مستندات لینک‌شده را دوباره بررسی کن.
 
 - [مشخصات Agent Skills](https://agentskills.io/specification)
+- [راهنمای نصب و به‌روزرسانی Skills CLI](https://github.com/vercel-labs/skills/blob/main/docs/commands.md)
 - [Codex: ساخت اسکیل](https://learn.chatgpt.com/docs/build-skills)
 - [Claude: نمای کلی Agent Skills](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
 - [Gemini CLI: Agent Skills](https://geminicli.com/docs/cli/skills/)
