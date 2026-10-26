@@ -18,7 +18,7 @@ The catalog includes every specific mode defined below, including modes without 
 
 ## Visible tag icons
 
-Display active tags in a separate block before the answer: put only the icon-tag list on its own line in small, regular-weight text using `<small>` markup (never bold the tags), then `---` as a divider before the answer text. Do not add a title such as `تگ‌ها`. Put each assigned icon directly before its tag label. Use icons only for active tags; never render the full icon catalog in an ordinary response. Keep the bracketed text label for clarity and accessibility because emoji appearance can vary by platform.
+Display active tags in a separate block before the answer: put only the icon-tag list on its own compact line in regular-weight text, without bold styling or HTML size markup, then `---` as a divider before the answer text. Do not add a title such as `تگ‌ها`. Put each assigned icon directly before its tag label. Use icons only for active tags; never render the full icon catalog in an ordinary response. Keep the bracketed text label for clarity and accessibility because emoji appearance can vary by platform.
 
 | Tag | Icon | Tag | Icon |
 |---|---:|---|---:|
@@ -45,7 +45,7 @@ Header format:
 Answer text starts here.
 ```
 
-In the actual rendered response, wrap only the first line in `<small>...</small>` so tag labels stay visually secondary and regular-weight.
+In the actual rendered response, keep the tag line plain and separate. Do not wrap it in `<small>` or any other HTML sizing element; do not bold it.
 
 ## Mandatory activation router
 

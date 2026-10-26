@@ -2,6 +2,10 @@
 
 This changelog summarizes the packaged changes. Git history is the source of truth for publication dates and revisions.
 
+## Post-release update
+
+- Removed the `<small>` wrapper from active-tag formatting instructions. The tag line remains separate, compact, regular-weight, and unbolded.
+
 ## Initial public release
 
 - Added a full-catalog activation router and a method-trace requirement so relevant, less-used tags are less likely to be skipped and visible tags correspond to actual work.

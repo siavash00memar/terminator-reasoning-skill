@@ -42,7 +42,7 @@ flowchart LR
     F --> G[Report facts, limits, and next step]
 ```
 
-Every session starts with **Cold Analysis** as a lightweight baseline. For each substantive turn, the skill scans the full 28-tag activation map so a less common but relevant method is not missed; this is a coverage check, not a quota. A task may use only the baseline when simple. Every specialist tag must correspond to a method actually applied. Active tags appear with assigned icons in a separate, small line, and substantive responses include a concise, user-visible method trace. Tags are working labels, not model modes; they do not unlock capabilities. See the [28-tag operational protocol](docs/tag-protocols.fa.md).
+Every session starts with **Cold Analysis** as a lightweight baseline. For each substantive turn, the skill scans the full 28-tag activation map so a less common but relevant method is not missed; this is a coverage check, not a quota. A task may use only the baseline when simple. Every specialist tag must correspond to a method actually applied. Active tags appear with assigned icons on a separate compact line, and substantive responses include a concise, user-visible method trace. Tags are working labels, not model modes; they do not unlock capabilities. See the [28-tag operational protocol](docs/tag-protocols.fa.md).
 
 ## When to use it
 
