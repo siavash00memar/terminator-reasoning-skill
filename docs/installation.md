@@ -4,19 +4,19 @@ The commands below install the public repository at `https://github.com/siavash0
 
 ## Recommended: install with Skills CLI
 
-The open Skills CLI installs this GitHub repository into Codex or another supported agent. It requires Node.js 22.20 or later. For a global Codex install, run:
+The open Skills CLI installs this GitHub repository into all supported agents or a selected set. It requires Node.js 22.20 or later. To install Terminator globally for all supported agents, run:
 
 ```sh
-npx skills add siavash00memar/terminator-reasoning-skill --skill terminator --global --agent codex
+npx skills add siavash00memar/terminator-reasoning-skill --skill terminator --global --agent '*'
 ```
 
-To target another supported agent, replace `codex` with its Skills CLI name, such as `claude-code` or `cursor`. To install only in the current project, omit `--global`. To update a global skill installed through Skills CLI:
+The wildcard targets every agent currently supported by Skills CLI, including Codex, Claude Code, Cursor, and Gemini CLI. To target selected agents instead, use their CLI identifiers, for example `--agent codex claude-code cursor`. To install only in the current project, omit `--global`. To update a global skill installed through Skills CLI:
 
 ```sh
 npx skills update terminator --global
 ```
 
-This update command manages Skills CLI installations. For a manual Git clone, use the Git update command below. See the official [Skills CLI reference](https://github.com/vercel-labs/skills/blob/main/docs/commands.md) for current agent names and options.
+This update command manages Skills CLI installations. For a manual Git clone, use the Git update command below. See the official [supported agents list](https://github.com/vercel-labs/skills/blob/main/docs/agents.md) and [Skills CLI reference](https://github.com/vercel-labs/skills/blob/main/docs/commands.md) for current identifiers and options. Agent support and behavior can differ by product.
 
 Terminator follows the open Agent Skills folder format. Client support for that format does not mean every feature, trigger, approval flow, or command behaves the same in every product. Use the platform-specific path below and consult its current docs when a client changes.
 
@@ -66,7 +66,7 @@ git clone https://github.com/siavash00memar/terminator-reasoning-skill.git \
 
 For a project, use `<project>/.claude/skills/terminator`. Invoke it with `/terminator`, or describe a task that matches the skill. Claude Code's installation path is separate from Codex's; installing to `~/.agents/skills/` alone is not a documented Claude Code path.
 
-### Gemini CLI
+### Gemini CLI (native alternative)
 
 Gemini CLI documents direct installation from a Git repository:
 

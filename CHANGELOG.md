@@ -4,6 +4,7 @@ This changelog summarizes the packaged changes. Git history is the source of tru
 
 ## Post-release update
 
+- Expanded the recommended Skills CLI install instructions from Codex-only to all supported agents, with a wildcard command and selected-agent example.
 - Added `npx skills` as the recommended one-command installer and updater; kept manual Git clone as the second method.
 - Removed the `<small>` wrapper from active-tag formatting instructions. The tag line remains separate, compact, regular-weight, and unbolded.
 

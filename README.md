@@ -85,19 +85,19 @@ The skill is a small folder: `SKILL.md` plus task-specific reference guides. It 
 
 ### Method 1: install with `npx skills` (recommended)
 
-The Skills CLI installs this GitHub repository into Codex's global skill directory. It requires Node.js 22.20 or later:
+The Skills CLI can install Terminator for every agent it supports, or for selected agents. It requires Node.js 22.20 or later. To install globally for all supported agents:
 
 ```sh
-npx skills add siavash00memar/terminator-reasoning-skill --skill terminator --global --agent codex
+npx skills add siavash00memar/terminator-reasoning-skill --skill terminator --global --agent '*'
 ```
 
-To target another supported agent, replace `codex` with its Skills CLI name, such as `claude-code` or `cursor`. To update a global installation made with this CLI:
+This targets all agents supported by Skills CLI, including Codex, Claude Code, Cursor, Gemini CLI, and others. To install only for selected agents, replace `'*'` with their CLI identifiers, for example `--agent codex claude-code cursor`. For a project-only install, omit `--global`. To update a global installation made with this CLI:
 
 ```sh
 npx skills update terminator --global
 ```
 
-See the [Skills CLI reference](https://github.com/vercel-labs/skills/blob/main/docs/commands.md) for current agent names and options. If Codex does not discover the skill, restart it; then invoke it with `$terminator` or ask a relevant task naturally.
+See the [Skills CLI agent list](https://github.com/vercel-labs/skills/blob/main/docs/agents.md) for current support and the [CLI reference](https://github.com/vercel-labs/skills/blob/main/docs/commands.md) for options. Agent support and skill behavior can differ by product. If an agent does not discover the skill, restart it and use its documented skill invocation.
 
 ### Method 2: install manually from Git
 
@@ -115,7 +115,7 @@ git clone https://github.com/siavash00memar/terminator-reasoning-skill.git `
 
 For project-only use, clone into `<project>/.agents/skills/terminator`. Codex and Cursor discover this shared directory. Claude Code's documented paths are `~/.claude/skills/terminator` globally and `<project>/.claude/skills/terminator` per project. To update a manual clone, run `git -C <skill-folder> pull`.
 
-### Gemini CLI
+### Gemini CLI (native alternative)
 
 ```bash
 gemini skills install https://github.com/siavash00memar/terminator-reasoning-skill.git --scope user
