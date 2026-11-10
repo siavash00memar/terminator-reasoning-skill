@@ -25,6 +25,7 @@ Terminator packages a consistent working method once. It helps an agent make its
 - **Separates the goal from the suggested solution.** It checks whether the requested approach actually serves the outcome.
 - **Checks for a better fit before acting.** When evidence supports a materially better approach, it explains why and asks whether you want alternatives; if you decline, it continues with your original feasible request.
 - **Reviews code structure when it matters.** For architecture, debugging, code review, and substantial implementation work, it checks maintainability, modularity, branching, boundaries, and simpler structural options; for architecture-heavy changes, it inspects the project before recommending a fitting design.
+- **Adapts the pace of multi-step work.** It asks whether you want all steps together or one at a time; in one-at-a-time mode, it waits for confirmation after each stage.
 - **Keeps evidence and inference distinct.** It calls out missing, stale, or indirect evidence when that affects the answer.
 - **Looks for credible counterexamples.** It challenges consequential assumptions without inventing objections just to sound skeptical.
 - **Adapts to the task.** It uses a compact answer for a simple question and a more deliberate workflow for research, decisions, debugging, and implementation.
